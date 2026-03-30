@@ -1,5 +1,5 @@
 /*      ---LIBRERIA HDRIVE---
-POR: D.CHUY, KAME ELECTRONICS
+POR: Jesús Amezquita, KAME ELECTRONICS
 
 Libreria capaz de controlar practicamente
 cualquier tipo de controlador de motores 
@@ -10,7 +10,7 @@ Limitado al control de solo dos motores
 de forma directa por ahora.
 
          ---HDRIVE LIBRARY---
-BY: D.CHUY, KAME ELECTRONICS
+BY: Jesus Amezquita, KAME ELECTRONICS
 
 Library for controlling nearly any motor 
 driver based on an H Bridge architecture,
@@ -19,7 +19,7 @@ brake and freerun.
 Limited for the moment at two motor direct
 control.
 
-©D. Chuy ©Kame Electronics*/
+©Jesus Amezquita ©Kame Electronics*/
 #ifndef _HDRIVE_H
 #define _HDRIVE_H
 
@@ -27,18 +27,18 @@ control.
 
 class drive {
 private:
-  byte mot1a;
-  byte mot2a;
-  byte mot1b;
-  byte mot2b;
-  byte pwma; 
-  byte pwmb;
+  byte motA1;
+  byte motA2;
+  byte motB1;
+  byte motB2;
+  byte pwmA; 
+  byte pwmB;
   byte stby;
 public:
-  drive(byte stby, byte mot1a, byte mot2a, byte mot1b, byte mot2b); 
+  drive(byte stby, byte motA1, byte motA2, byte motB1, byte motB2); 
   void init();
   void off();
-  void setpwm(byte pwma, byte pwmb);
+  void setpwm(byte pwmA, byte pwmB);
   void forward(int pwmv);
   void backward(int pwmv);
   void left(int pwmv);
