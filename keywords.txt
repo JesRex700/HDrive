@@ -1,0 +1,29 @@
+#######################################
+# Syntax Coloring Map For HDrive
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Drive	KEYWORD1	Drive
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+init		KEYWORD2
+off		KEYWORD2
+setpwm		KEYWORD2
+forward		KEYWORD2
+backward	KEYWORD2
+left		KEYWORD2
+right		KEYWORD2
+embrake		KEYWORD2
+freerun		KEYWORD2
+enbrun		KEYWORD2
+prueba		KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
