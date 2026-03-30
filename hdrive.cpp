@@ -75,12 +75,12 @@ void drive::enbrun(){         //Vuelve a activar el Enable o Stanby
   digitalWrite(stby, HIGH);   //Turns back on the Enable or Stanby pins
 }
 void drive::prueba(int pwmv) {  //Codigo de prueba, activa en secuencia todas las funciones de movimiento
-  adelante(pwmv);               //Test code, activates on secuence all the movility functions
+  forward(pwmv);               //Test code, activates on secuence all the movility functions
   delay(750);
-  atras(pwmv);
+  backward(pwmv);
   delay(750);
-  izquierda(pwmv);
+  left(pwmv);
   delay(750);
-  derecha(pwmv);
+  right(pwmv);
   delay(750);
 }
