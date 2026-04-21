@@ -8,5 +8,5 @@ void setup() {
 }
 
 void loop() {
-  avanzar.prueba(255);
+  avanzar.prueba();
 }
