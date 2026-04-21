@@ -19,7 +19,9 @@ brake and freerun.
 Limited for the moment at two motor direct
 control.
 
-©Jesus Amezquita ©Kame Electronics*/
+©Jesus Amezquita ©Kame Electronics
+v.1.1.0
+*/
 #ifndef _HDRIVE_H
 #define _HDRIVE_H
 
@@ -31,22 +33,22 @@ private:
   byte motA2;
   byte motB1;
   byte motB2;
-  byte pwmA; 
+  byte pwmA;
   byte pwmB;
   byte stby;
 public:
-  drive(byte stby, byte motA1, byte motA2, byte motB1, byte motB2); 
+  drive(byte stby, byte motA1, byte motA2, byte motB1, byte motB2);
   void init();
   void off();
-  void setpwm(byte pwmA, byte pwmB);
-  void forward(int pwmv);
-  void backward(int pwmv);
-  void left(int pwmv);
-  void right(int pwmv);
-  void embrake(int pwmv); 
-void freerun();
-void enbrun();
-  void prueba(int pwmv);
+  void setpwm(byte pwmA , byte pwmB);
+  void forward(int pwmVa = 255, int pwmVb = 255);
+  void backward(int pwmVa = 255, int pwmVb = 255);
+  void left(int pwmVa = 255, int pwmVb = 255);
+  void right(int pwmVa = 255, int pwmVb = 255);
+  void embrake(int pwmVa = 255, int pwmVb = 255);
+  void freerun();
+  void enbrun();
+  void prueba(int pwmVa = 255, int pwmVb = 255);
 };
 
 #endif
