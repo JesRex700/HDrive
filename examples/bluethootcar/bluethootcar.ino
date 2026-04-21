@@ -13,16 +13,16 @@ void loop() {
   blue = Serial.read();
   switch (blue) {
     case 'F':
-      avanzar.atras(255);
+      avanzar.atras();
       break;
     case 'B':
-      avanzar.adelante(255);
+      avanzar.adelante();
       break;
     case 'L':
-      avanzar.izquierda(255);
+      avanzar.izquierda();
       break;
     case 'R':
-      avanzar.derecha(255);
+      avanzar.derecha();
       break;
     case 'S':
       avanzar.off();
