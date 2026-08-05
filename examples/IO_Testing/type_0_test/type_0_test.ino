@@ -1,6 +1,6 @@
 #include "hdrive.h"
 
-drive drive(8, 6, 7, 9, 10, 5, 11);
+drive drive(6, 7, 9, 10, 8, 5, 11);
 
 void setup() {
 
