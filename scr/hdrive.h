@@ -47,7 +47,7 @@ private:
   int idf;
 public:
   drive(byte motA1, byte motA2, byte motB1, byte motB2, byte stby, byte pwmA, byte pwmB);
-  drive(byte motA1, byte motA2, byte motB1, byte motB2, int idf = 0);
+  drive(byte motA1, byte motA2, byte motB1, byte motB2, int idf);
   drive(byte motA1, byte motA2, byte motB1, byte motB2, byte en1, byte en2);
   drive(byte motA1, byte motA2, byte motB1, byte motB2);
   drive(byte motA1, byte motA2);
