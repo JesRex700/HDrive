@@ -350,7 +350,7 @@ void drive::sleep() {      //Desactiva el Enable o Standby, en algunos controlad
 void drive::wakeUp() {       //Vuelve a activar Stanby
   digitalWrite(stby, HIGH);  //Turns back on the Stanby pin
 }
-void drive::prueba(int pwmVa, int pwmVb) {  //Codigo de prueba, activa en secuencia todas las funciones de movimiento
+void drive::test(int pwmVa, int pwmVb) {  //Codigo de prueba, activa en secuencia todas las funciones de movimiento
   forward(pwmVa, pwmVb);                    //Test code, activates on secuence all the movility functions
   delay(750);
   backward(pwmVa, pwmVb);
