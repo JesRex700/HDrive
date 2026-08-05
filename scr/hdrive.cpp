@@ -20,11 +20,11 @@ drive::drive(byte stby, byte motA1, byte motA2, byte motB1, byte motB2, byte pwm
 //  ---For: L293D(MC enabled) or similars---
 //  ---Para: L293D(Activado mediante MC) o similares---
 
-drive::drive(byte motA1, byte motA2, byte motB1, byte motB2, int idf) {
-  this->motA1 = motA1;  //Motor A, Input 1
-  this->motA2 = motA2;  //Motor A, Input 2 //Motor Derecho / Right Motor
-  this->motB1 = motB1;  //Motor B, Input 1
-  this->motB2 = motB2;  //Motor B, Input 2 //Motor Izquierdo / Left Motor
+drive::drive(byte inp1, byte inp2, byte inp3, byte inp4, int idf) {
+  this->inp1 = motA1;  //Motor A, Input 1
+  this->inp2 = motA2;  //Motor A, Input 2 //Motor Derecho / Right Motor
+  this->inp3 = motB1;  //Motor B, Input 1
+  this->inp4 = motB2;  //Motor B, Input 2 //Motor Izquierdo / Left Motor
   this->idf = 0;    //Place holder
   this->type = 1;
 }
