@@ -46,11 +46,35 @@ private:
   int type;
   int idf;
 public:
+
+//  ---2 Motors, 1 Stanby/En, 2 Independent PWM Channels--
+//  ---2 Motores, 1 Standby/En, 2 Canales de PWM independientes---
+
   drive(byte motA1, byte motA2, byte motB1, byte motB2, byte stby, byte pwmA, byte pwmB);
-  drive(byte motA1, byte motA2, byte motB1, byte motB2, int idf);
-  drive(byte motA1, byte motA2, byte motB1, byte motB2, byte en1, byte en2);
+
+//  ---2 Motors, No Stanby/En, No PWM---
+//  ---2 Motores, No Stanby/En, No PWM---
+
+  drive(byte inp1, byte inp2, byte inp3, byte inp4, int idf);
+
+//  ---2 Motors, 2 Enable/Stby, Enable pins are also for PWM---
+//  ---2 Motores, 2 Enable/Stby, Los pines Enable tambien son para PWM---
+
+  drive(byte inp1, byte inp2, byte inp3, byte inp4, byte en1, byte en2);
+
+//  ---2 Motors, No Stby/En, No PWM/ PWM via Input---
+//  ---2 Motores, No Stby/En, No PWM/ PWM via Input---
+
   drive(byte motA1, byte motA2, byte motB1, byte motB2);
+
+//  ---1 Motor, PWM  via input---
+
   drive(byte motA1, byte motA2);
+
+//  ---1 Motor, no PWM---
+
+  drive(byte motA1, byte motA2, int idf);
+ 
   void init();
   void off();
   void forward(int pwmVa = 255, int pwmVb = 255);
