@@ -15,8 +15,8 @@ drive::drive(byte stby, byte motA1, byte motA2, byte motB1, byte motB2, byte pwm
   this->type = 0;
 }
 
-//  ---2 Motors, 1 Stanby/En, No PWM---
-//  ---2 Motores, 1 Stanby/En, No PWM---
+//  ---2 Motors, No Stanby/En, No PWM---
+//  ---2 Motores, No Stanby/En, No PWM---
 //  ---For: L293D(MC enabled) or similars---
 //  ---Para: L293D(Activado mediante MC) o similares---
 
@@ -44,8 +44,8 @@ drive::drive(byte inp1, byte inp2, byte inp3, byte inp4, byte en1, byte en2) {
   this->type = 2;
 }
 
-//  ---2 Motors, No Stby/En, No PWM/ PWM via Input
-//  ---2 Motores, No Stby/En, No PWM/ PWM via Input
+//  ---2 Motors, No Stby/En, No PWM/ PWM via Input---
+//  ---2 Motores, No Stby/En, No PWM/ PWM via Input---
 //  ---For: DRV88XX or similars---
 //  ---Para: DRV88XX o similares---
 
