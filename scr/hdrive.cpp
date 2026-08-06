@@ -57,10 +57,21 @@ drive::drive(byte motA1, byte motA2, byte motB1, byte motB2) {
   this->type = 3;
 }
 
+//  ---1 Motor, PWM  via input---
+
 drive::drive(byte motA1, byte motA2) {
   this->motA1 = motA1;  //Motor Input 1
   this->motA2 = motA2;  //Motor Input 2
   this->type = 4;
+}
+
+//  ---1 Motor, no PWM---
+
+drive::drive(byte motA1, byte motA2, int idf) {
+  this->motA1 = motA1;  //Motor Input 1
+  this->motA2 = motA2;  //Motor Input 2
+  this->idf = 0;
+  this->type = 5;
 }
 
 void drive::init() {       //Inicia todos los pines del microcontrolador asociados al controlador, estos estan pensados para arduino, otros microcontroladores tal vez requieran configuracion adicional
@@ -129,10 +140,17 @@ void drive::forward(int pwmVa, int pwmVb) {  //Drive Forward / Avanzar hacia ade
       digitalWrite(motB2, LOW);
       break;
 
-      //1 Motor
+      //1 Motor, PWM via input
 
     case 4:
       analogWrite(motA1, pwmVa);
+      digitalWrite(motA2, LOW);
+      break;
+    
+      //1 Motor, no PWM
+
+    case 5:
+      digitalWrite(motA1, HIGH);
       digitalWrite(motA2, LOW);
       break;
   }
@@ -187,6 +205,13 @@ void drive::backward(int pwmVa, int pwmVb) {  //Drive Backwards / Avanzar hacia 
       analogWrite(motA1, LOW);
       digitalWrite(motA2, pwmVa);
       break;
+          
+      //1 Motor, no PWM
+
+    case 5:
+      digitalWrite(motA1, LOW);
+      digitalWrite(motA2, HIGH);
+      break;
   }
 }
 
@@ -237,6 +262,13 @@ void drive::left(int pwmVa, int pwmVb) {  //Drive Leftward / Avanzar a la izquie
 
     case 4:
       analogWrite(motA1, pwmVa);
+      digitalWrite(motA2, LOW);
+      break;
+          
+      //1 Motor, no PWM
+
+    case 5:
+      digitalWrite(motA1, HIGH);
       digitalWrite(motA2, LOW);
       break;
   }
@@ -290,6 +322,13 @@ void drive::right(int pwmVa, int pwmVb) {  //Drive Rightward / Avanzar a la Dere
       analogWrite(motA1, LOW);
       digitalWrite(motA2, pwmVa);
       break;
+          
+      //1 Motor, no PWM
+
+    case 5:
+      digitalWrite(motA1, LOW);
+      digitalWrite(motA2, HIGH);
+      break;
   }
 }
 void drive::brake(int pwmVa, int pwmVb) {  //Brake, depending on the driver it can be soft or hard braking. Chek the used drivers datasheet for more info
@@ -340,6 +379,14 @@ void drive::brake(int pwmVa, int pwmVb) {  //Brake, depending on the driver it c
     case 4:
       analogWrite(motA1, LOW);
       digitalWrite(motA2, LOW);
+      break;
+          
+      //1 Motor
+
+    case 5:
+      digitalWrite(motA1, LOW);
+      digitalWrite(motA2, LOW);
+      break;
   }
 }
 void drive::sleep() {      //Desactiva el Enable o Standby, en algunos controladores esto activa el movimiento libre
