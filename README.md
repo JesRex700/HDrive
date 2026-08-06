@@ -32,4 +32,4 @@ This library allows you to control in a much efficient and easy way a great vari
   - L293D
   - DRV8870(Not tested)
 
-Version: 2.0.0 (beta)
+Version: 2.0.0 
