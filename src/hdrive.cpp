@@ -7,7 +7,7 @@
 
 drive::drive(byte motA1, byte motA2, byte motB1, byte motB2, byte stby, byte pwmA, byte pwmB) {
   this->motA1 = motA1;  //Motor A, Input 1
-  this->motA2 = motA2;
+  this->motA2 = motA2;  //Motor A, Input 2
   this->motB1 = motB1;  //Motor B, Input 1
   this->motB2 = motB2;  //Motor B, Input 2 //Motor Izquierdo / Left Motor
   this->stby = stby;    //Stanby
